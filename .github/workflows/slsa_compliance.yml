@@ -1,0 +1,51 @@
+name: SLSA Compliance Automation
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+  schedule:
+    - cron: "0 0 * * *" # Runs daily at midnight
+
+jobs:
+  slsa-compliance:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout Repository
+      uses: actions/checkout@v3
+
+    - name: Set up Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.10'
+
+    - name: Install Dependencies
+      run: |
+        python -m venv venv
+        source venv/bin/activate
+        pip install -r requirements.txt
+
+    - name: Run Policy Manager
+      env:
+        OPA_URL: 'http://localhost:8181'
+      run: |
+        source venv/bin/activate
+        python slsa_compliance/policy/policy_manager.py
+
+    - name: Record Provenance
+      run: |
+        source venv/bin/activate
+        python slsa_compliance/provenance/provenance_tracker.py
+
+    - name: Start Monitoring Metrics
+      run: |
+        source venv/bin/activate
+        nohup python slsa_compliance/monitoring/metrics.py &
+
+    - name: Post Metrics to Prometheus
+      run: |
+        curl -X POST http://localhost:8000/metrics
