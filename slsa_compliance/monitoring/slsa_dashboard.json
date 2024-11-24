@@ -1,0 +1,643 @@
+{
+    "annotations": {
+      "list": [
+        {
+          "builtIn": 1,
+          "datasource": {
+            "type": "grafana",
+            "uid": "-- Grafana --"
+          },
+          "enable": true,
+          "hide": true,
+          "iconColor": "rgba(0, 211, 255, 1)",
+          "name": "Annotations & Alerts",
+          "type": "dashboard"
+        }
+      ]
+    },
+    "editable": true,
+    "fiscalYearStartMonth": 0,
+    "graphTooltip": 0,
+    "id": 3,
+    "links": [],
+    "panels": [
+      {
+        "datasource": {
+          "type": "marcusolsson-csv-datasource",
+          "uid": "be4y0fhw801kwe"
+        },
+        "fieldConfig": {
+          "defaults": {
+            "color": {
+              "fixedColor": "semi-dark-green",
+              "mode": "thresholds"
+            },
+            "mappings": [],
+            "thresholds": {
+              "mode": "absolute",
+              "steps": [
+                {
+                  "color": "green",
+                  "value": null
+                },
+                {
+                  "color": "red",
+                  "value": 3
+                }
+              ]
+            }
+          },
+          "overrides": []
+        },
+        "gridPos": {
+          "h": 8,
+          "w": 12,
+          "x": 0,
+          "y": 0
+        },
+        "id": 5,
+        "options": {
+          "colorMode": "value",
+          "graphMode": "area",
+          "justifyMode": "auto",
+          "orientation": "auto",
+          "percentChangeColorMode": "standard",
+          "reduceOptions": {
+            "calcs": [
+              "lastNotNull"
+            ],
+            "fields": "",
+            "values": false
+          },
+          "showPercentChange": false,
+          "textMode": "auto",
+          "wideLayout": true
+        },
+        "pluginVersion": "11.3.0",
+        "targets": [
+          {
+            "decimalSeparator": ".",
+            "delimiter": ",",
+            "header": true,
+            "ignoreUnknown": false,
+            "refId": "A",
+            "schema": [
+              {
+                "name": "average_risk_score",
+                "type": "number"
+              },
+              {
+                "name": "timestamp",
+                "type": "time"
+              }
+            ],
+            "skipRows": 0
+          }
+        ],
+        "title": "Average Risk Score and Score of the Last Check Performed",
+        "type": "stat"
+      },
+      {
+        "datasource": {
+          "type": "marcusolsson-csv-datasource",
+          "uid": "be4y0fhw801kwe"
+        },
+        "fieldConfig": {
+          "defaults": {
+            "color": {
+              "mode": "palette-classic"
+            },
+            "custom": {
+              "axisBorderShow": false,
+              "axisCenteredZero": false,
+              "axisColorMode": "text",
+              "axisLabel": "",
+              "axisPlacement": "auto",
+              "fillOpacity": 80,
+              "gradientMode": "none",
+              "hideFrom": {
+                "legend": false,
+                "tooltip": false,
+                "viz": false
+              },
+              "lineWidth": 1,
+              "scaleDistribution": {
+                "type": "linear"
+              },
+              "thresholdsStyle": {
+                "mode": "line+area"
+              }
+            },
+            "mappings": [],
+            "thresholds": {
+              "mode": "absolute",
+              "steps": [
+                {
+                  "color": "green",
+                  "value": null
+                },
+                {
+                  "color": "red",
+                  "value": 40
+                }
+              ]
+            }
+          },
+          "overrides": []
+        },
+        "gridPos": {
+          "h": 8,
+          "w": 12,
+          "x": 12,
+          "y": 0
+        },
+        "id": 3,
+        "options": {
+          "barRadius": 0,
+          "barWidth": 0.78,
+          "fullHighlight": false,
+          "groupWidth": 0.7,
+          "legend": {
+            "calcs": [],
+            "displayMode": "list",
+            "placement": "bottom",
+            "showLegend": true
+          },
+          "orientation": "auto",
+          "showValue": "auto",
+          "stacking": "none",
+          "tooltip": {
+            "mode": "single",
+            "sort": "none"
+          },
+          "xField": "timestamp",
+          "xTickLabelMaxLength": 3,
+          "xTickLabelRotation": 75,
+          "xTickLabelSpacing": 0
+        },
+        "pluginVersion": "11.3.0",
+        "targets": [
+          {
+            "decimalSeparator": ".",
+            "delimiter": ",",
+            "header": true,
+            "ignoreUnknown": false,
+            "refId": "A",
+            "schema": [
+              {
+                "name": "check_duration",
+                "type": "number"
+              },
+              {
+                "name": "timestamp",
+                "type": "time"
+              }
+            ],
+            "skipRows": 0
+          }
+        ],
+        "title": "Total Check Duration (seconds)",
+        "type": "barchart"
+      },
+      {
+        "datasource": {
+          "uid": "be4y0fhw801kwe"
+        },
+        "fieldConfig": {
+          "defaults": {
+            "color": {
+              "mode": "palette-classic"
+            },
+            "custom": {
+              "axisBorderShow": false,
+              "axisCenteredZero": false,
+              "axisColorMode": "text",
+              "axisLabel": "",
+              "axisPlacement": "auto",
+              "barAlignment": 0,
+              "barWidthFactor": 0.6,
+              "drawStyle": "line",
+              "fillOpacity": 0,
+              "gradientMode": "none",
+              "hideFrom": {
+                "legend": false,
+                "tooltip": false,
+                "viz": false
+              },
+              "insertNulls": false,
+              "lineInterpolation": "smooth",
+              "lineWidth": 1,
+              "pointSize": 5,
+              "scaleDistribution": {
+                "type": "linear"
+              },
+              "showPoints": "auto",
+              "spanNulls": false,
+              "stacking": {
+                "group": "A",
+                "mode": "none"
+              },
+              "thresholdsStyle": {
+                "mode": "off"
+              }
+            },
+            "mappings": [],
+            "thresholds": {
+              "mode": "absolute",
+              "steps": [
+                {
+                  "color": "green",
+                  "value": null
+                },
+                {
+                  "color": "#EAB839",
+                  "value": 3
+                },
+                {
+                  "color": "red",
+                  "value": 4
+                }
+              ]
+            }
+          },
+          "overrides": []
+        },
+        "gridPos": {
+          "h": 8,
+          "w": 12,
+          "x": 0,
+          "y": 8
+        },
+        "id": 2,
+        "options": {
+          "legend": {
+            "calcs": [],
+            "displayMode": "list",
+            "placement": "bottom",
+            "showLegend": true
+          },
+          "tooltip": {
+            "mode": "single",
+            "sort": "none"
+          }
+        },
+        "pluginVersion": "11.3.0",
+        "targets": [
+          {
+            "decimalSeparator": ".",
+            "delimiter": ",",
+            "header": true,
+            "ignoreUnknown": false,
+            "refId": "A",
+            "schema": [
+              {
+                "name": "failed_compliance_checks",
+                "type": "number"
+              },
+              {
+                "name": "timestamp",
+                "type": "time"
+              }
+            ],
+            "skipRows": 0
+          }
+        ],
+        "title": "Number of Artifacts with Failed Checks",
+        "type": "timeseries"
+      },
+      {
+        "datasource": {
+          "uid": "be4y0fhw801kwe"
+        },
+        "fieldConfig": {
+          "defaults": {
+            "color": {
+              "mode": "palette-classic"
+            },
+            "custom": {
+              "axisBorderShow": false,
+              "axisCenteredZero": false,
+              "axisColorMode": "text",
+              "axisLabel": "",
+              "axisPlacement": "auto",
+              "barAlignment": 0,
+              "barWidthFactor": 0.6,
+              "drawStyle": "line",
+              "fillOpacity": 0,
+              "gradientMode": "none",
+              "hideFrom": {
+                "legend": false,
+                "tooltip": false,
+                "viz": false
+              },
+              "insertNulls": false,
+              "lineInterpolation": "linear",
+              "lineStyle": {
+                "dash": [
+                  0,
+                  10
+                ],
+                "fill": "dot"
+              },
+              "lineWidth": 2,
+              "pointSize": 5,
+              "scaleDistribution": {
+                "type": "linear"
+              },
+              "showPoints": "auto",
+              "spanNulls": false,
+              "stacking": {
+                "group": "A",
+                "mode": "none"
+              },
+              "thresholdsStyle": {
+                "mode": "off"
+              }
+            },
+            "mappings": [],
+            "thresholds": {
+              "mode": "absolute",
+              "steps": [
+                {
+                  "color": "green",
+                  "value": null
+                },
+                {
+                  "color": "red",
+                  "value": 30
+                }
+              ]
+            }
+          },
+          "overrides": []
+        },
+        "gridPos": {
+          "h": 8,
+          "w": 12,
+          "x": 12,
+          "y": 8
+        },
+        "id": 4,
+        "options": {
+          "legend": {
+            "calcs": [],
+            "displayMode": "list",
+            "placement": "bottom",
+            "showLegend": true
+          },
+          "tooltip": {
+            "mode": "single",
+            "sort": "none"
+          }
+        },
+        "pluginVersion": "11.3.0",
+        "targets": [
+          {
+            "decimalSeparator": ".",
+            "delimiter": ",",
+            "header": true,
+            "ignoreUnknown": false,
+            "refId": "A",
+            "schema": [
+              {
+                "name": "total_compliance_checks",
+                "type": "number"
+              },
+              {
+                "name": "timestamp",
+                "type": "time"
+              }
+            ],
+            "skipRows": 0
+          }
+        ],
+        "title": "Total Checks Performed in the Last 10 Minutes",
+        "type": "timeseries"
+      },
+      {
+        "datasource": {
+          "type": "marcusolsson-csv-datasource",
+          "uid": "be4y0fhw801kwe"
+        },
+        "fieldConfig": {
+          "defaults": {
+            "color": {
+              "mode": "palette-classic"
+            },
+            "custom": {
+              "axisBorderShow": false,
+              "axisCenteredZero": false,
+              "axisColorMode": "text",
+              "axisLabel": "",
+              "axisPlacement": "auto",
+              "barAlignment": 0,
+              "barWidthFactor": 0.6,
+              "drawStyle": "line",
+              "fillOpacity": 0,
+              "gradientMode": "none",
+              "hideFrom": {
+                "legend": false,
+                "tooltip": false,
+                "viz": false
+              },
+              "insertNulls": false,
+              "lineInterpolation": "linear",
+              "lineWidth": 1,
+              "pointSize": 5,
+              "scaleDistribution": {
+                "type": "linear"
+              },
+              "showPoints": "auto",
+              "spanNulls": false,
+              "stacking": {
+                "group": "A",
+                "mode": "none"
+              },
+              "thresholdsStyle": {
+                "mode": "off"
+              }
+            },
+            "mappings": [],
+            "thresholds": {
+              "mode": "absolute",
+              "steps": [
+                {
+                  "color": "green",
+                  "value": null
+                },
+                {
+                  "color": "red",
+                  "value": 80
+                }
+              ]
+            }
+          },
+          "overrides": []
+        },
+        "gridPos": {
+          "h": 8,
+          "w": 12,
+          "x": 0,
+          "y": 16
+        },
+        "id": 1,
+        "options": {
+          "legend": {
+            "calcs": [],
+            "displayMode": "list",
+            "placement": "bottom",
+            "showLegend": true
+          },
+          "tooltip": {
+            "mode": "single",
+            "sort": "none"
+          }
+        },
+        "pluginVersion": "11.3.0",
+        "targets": [
+          {
+            "datasource": {
+              "type": "marcusolsson-csv-datasource",
+              "uid": "be4y0fhw801kwe"
+            },
+            "decimalSeparator": ".",
+            "delimiter": ",",
+            "header": true,
+            "ignoreUnknown": false,
+            "refId": "A",
+            "schema": [
+              {
+                "name": "compliance_status",
+                "type": "number"
+              },
+              {
+                "name": "timestamp",
+                "type": "time"
+              }
+            ],
+            "skipRows": 0
+          }
+        ],
+        "title": "Compliance Status",
+        "type": "timeseries"
+      },
+      {
+        "datasource": {
+          "type": "marcusolsson-csv-datasource",
+          "uid": "be4y0fhw801kwe"
+        },
+        "fieldConfig": {
+          "defaults": {
+            "color": {
+              "mode": "palette-classic"
+            },
+            "custom": {
+              "axisBorderShow": false,
+              "axisCenteredZero": false,
+              "axisColorMode": "text",
+              "axisLabel": "",
+              "axisPlacement": "auto",
+              "fillOpacity": 80,
+              "gradientMode": "none",
+              "hideFrom": {
+                "legend": false,
+                "tooltip": false,
+                "viz": false
+              },
+              "lineWidth": 1,
+              "scaleDistribution": {
+                "type": "linear"
+              },
+              "thresholdsStyle": {
+                "mode": "off"
+              }
+            },
+            "mappings": [],
+            "thresholds": {
+              "mode": "absolute",
+              "steps": [
+                {
+                  "color": "green",
+                  "value": null
+                },
+                {
+                  "color": "red",
+                  "value": 80
+                }
+              ]
+            }
+          },
+          "overrides": []
+        },
+        "gridPos": {
+          "h": 8,
+          "w": 12,
+          "x": 12,
+          "y": 16
+        },
+        "id": 6,
+        "options": {
+          "barRadius": 0,
+          "barWidth": 0.97,
+          "fullHighlight": false,
+          "groupWidth": 0.7,
+          "legend": {
+            "calcs": [],
+            "displayMode": "list",
+            "placement": "bottom",
+            "showLegend": true
+          },
+          "orientation": "vertical",
+          "showValue": "always",
+          "stacking": "none",
+          "tooltip": {
+            "mode": "single",
+            "sort": "none"
+          },
+          "xField": "timestamp",
+          "xTickLabelMaxLength": 3,
+          "xTickLabelRotation": 75,
+          "xTickLabelSpacing": 0
+        },
+        "pluginVersion": "11.3.0",
+        "targets": [
+          {
+            "decimalSeparator": ".",
+            "delimiter": ",",
+            "header": true,
+            "ignoreUnknown": false,
+            "refId": "A",
+            "schema": [
+              {
+                "name": "provenance_validation_failures",
+                "type": "number"
+              },
+              {
+                "name": "timestamp",
+                "type": "time"
+              }
+            ],
+            "skipRows": 0
+          }
+        ],
+        "title": "Failed Provenance Checks",
+        "type": "barchart"
+      }
+    ],
+    "preload": false,
+    "schemaVersion": 40,
+    "tags": [],
+    "templating": {
+      "list": []
+    },
+    "time": {
+      "from": "2024-11-24T17:29:44.391Z",
+      "to": "2024-11-24T20:29:58.010Z"
+    },
+    "timepicker": {},
+    "timezone": "",
+    "title": "slsa",
+    "uid": "ce4y1qxpfbqwwe",
+    "version": 8,
+    "weekStart": ""
+  }

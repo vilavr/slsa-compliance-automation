@@ -1,4 +1,4 @@
-code_hooks = """
+code_hooks = ""
 import subprocess
 import sys
 

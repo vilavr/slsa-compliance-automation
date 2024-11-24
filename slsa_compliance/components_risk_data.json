@@ -1,0 +1,22 @@
+{
+    "components": [
+      {
+        "name": "component_1",
+        "AC": 4,
+        "VS": 3,
+        "EL": 5,
+        "TPDR": 2,
+        "FC": 3,
+        "SCE": 8
+      },
+      {
+        "name": "component_2",
+        "AC": 5,
+        "VS": 4,
+        "EL": 5,
+        "TPDR": 3,
+        "FC": 4,
+        "SCE": 9
+      }
+    ]
+  }
