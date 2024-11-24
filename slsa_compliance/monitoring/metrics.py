@@ -3,7 +3,6 @@ import time
 
 class ComplianceMetrics:
     def __init__(self):
-        # Define Prometheus metrics to track compliance status
         self.compliance_status = Gauge('slsa_compliance_status', 'Compliance status of the CI/CD pipeline')
         self.failed_checks = Gauge('slsa_failed_compliance_checks', 'Number of failed compliance checks')
 
